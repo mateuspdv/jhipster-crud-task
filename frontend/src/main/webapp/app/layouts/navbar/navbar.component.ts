@@ -78,4 +78,9 @@ export default class NavbarComponent implements OnInit {
   toggleNavbar(): void {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
+
+  isAuthenticated(): boolean {
+    return this.accountService.isAuthenticated();
+  }
+
 }
