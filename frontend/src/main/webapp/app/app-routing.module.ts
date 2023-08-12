@@ -5,7 +5,6 @@ import { errorRoute } from './layouts/error/error.route';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import { Authority } from 'app/config/authority.constants';
 
-import HomeComponent from './home/home.component';
 import NavbarComponent from './layouts/navbar/navbar.component';
 import LoginComponent from './login/login.component';
 
@@ -17,8 +16,8 @@ import { UserRouteAccessService } from 'app/core/auth/user-route-access.service'
       [
         {
           path: '',
-          component: HomeComponent,
-          title: 'home.title',
+          component: LoginComponent,
+          title: 'login.title',
         },
         {
           path: '',
@@ -36,11 +35,6 @@ import { UserRouteAccessService } from 'app/core/auth/user-route-access.service'
         {
           path: 'account',
           loadChildren: () => import('./account/account.route'),
-        },
-        {
-          path: 'login',
-          component: LoginComponent,
-          title: 'login.title',
         },
         {
           path: '',
