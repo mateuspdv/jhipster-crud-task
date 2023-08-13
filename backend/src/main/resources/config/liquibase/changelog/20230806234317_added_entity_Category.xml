@@ -14,6 +14,17 @@
             <column name="name" type="varchar(50)">
                 <constraints nullable="false" unique="true" uniqueConstraintName="ux_category_name" />
             </column>
+            <column name="creation_date" type="datetime">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="last_update_date" type="datetime">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="id_user" type="bigint">
+                <constraints nullable="false"
+                             foreignKeyName="fk_category_id_user"
+                             references="jhi_user(id)"></constraints>
+            </column>
         </createTable>
     </changeSet>
 

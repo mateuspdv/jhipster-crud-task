@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
@@ -13,6 +15,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "category")
@@ -32,6 +35,16 @@ public class Category implements Serializable {
     @Size(min = 3, max = 50)
     @Column(name = "name", length = 50, nullable = false, unique = true)
     private String name;
+
+    @Column(name = "creation_date")
+    private LocalDateTime creationDate;
+
+    @Column(name = "last_update_date")
+    private LocalDateTime lastUpdateDate;
+
+    @ManyToOne
+    @JoinColumn(name = "id_user", referencedColumnName = "id")
+    private User user;
 
     @Override
     public boolean equals(Object o) {

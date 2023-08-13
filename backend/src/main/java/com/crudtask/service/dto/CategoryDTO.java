@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
@@ -17,6 +18,10 @@ public class CategoryDTO implements Serializable {
     @NotNull
     @Size(min = 3, max = 50)
     private String name;
+
+    private LocalDateTime creationDate;
+
+    private LocalDateTime lastUpdateDate;
 
     @Override
     public boolean equals(Object o) {
