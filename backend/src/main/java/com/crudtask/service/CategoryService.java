@@ -88,4 +88,8 @@ public class CategoryService {
         categoryRepository.deleteById(id);
     }
 
+    public Page<CategoryDTO> getCategoriesByLogin(Pageable pageable, String login) {
+        return categoryRepository.getCategoriesByLogin(pageable, login);
+    }
+
 }

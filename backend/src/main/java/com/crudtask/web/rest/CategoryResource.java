@@ -159,4 +159,10 @@ public class CategoryResource {
             .build();
     }
 
+    @GetMapping("/categories/user/{login}")
+    public ResponseEntity<Page<CategoryDTO>> getCategoriesByLogin(Pageable pageable, @PathVariable("login") String login) {
+        log.debug("REST request to get categories tied to a login : {}", login);
+        return ResponseEntity.ok(categoryService.getCategoriesByLogin(pageable, login));
+    }
+
 }
