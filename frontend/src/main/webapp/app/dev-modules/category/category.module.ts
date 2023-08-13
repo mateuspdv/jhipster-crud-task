@@ -5,7 +5,7 @@ import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { CategoryFormComponent } from './components/category-form/category-form.component';
 
-import { ButtonModule } from 'primeng/button';
+import SharedModule from 'app/shared/shared.module';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { ButtonModule } from 'primeng/button';
   imports: [
     CommonModule,
     CategoryRoutingModule,
-    ButtonModule
+    SharedModule
   ]
 })
 export class CategoryModule { }

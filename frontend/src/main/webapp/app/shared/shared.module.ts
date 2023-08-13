@@ -9,11 +9,19 @@ import TranslateDirective from './language/translate.directive';
 import { AlertComponent } from './alert/alert.component';
 import { AlertErrorComponent } from './alert/alert-error.component';
 
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+
 /**
  * Application wide Module
  */
 @NgModule({
-  imports: [AlertComponent, AlertErrorComponent, FindLanguageFromKeyPipe, TranslateDirective],
+  imports: [
+    AlertComponent,
+    AlertErrorComponent,
+    FindLanguageFromKeyPipe,
+    TranslateDirective
+  ],
   exports: [
     CommonModule,
     NgbModule,
@@ -23,6 +31,8 @@ import { AlertErrorComponent } from './alert/alert-error.component';
     TranslateModule,
     FindLanguageFromKeyPipe,
     TranslateDirective,
+    ButtonModule,
+    TableModule
   ],
 })
 export default class SharedModule {}

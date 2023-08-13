@@ -87,12 +87,12 @@
     "guard-for-in": "error",
     "no-bitwise": "error",
     "no-caller": "error",
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-console": "off",
     "no-eval": "error",
     "no-labels": "error",
     "no-new": "error",
     "no-new-wrappers": "error",
-    "object-shorthand": ["error", "always", { "avoidExplicitReturnArrows": true }],
+    "object-shorthand": 0,
     "radix": "error",
     "spaced-comment": ["warn", "always"]
   }

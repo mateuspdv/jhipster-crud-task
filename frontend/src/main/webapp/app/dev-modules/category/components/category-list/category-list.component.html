@@ -1,3 +1,18 @@
 <p>category-list works!</p>
 
-<button pButton pRipple label="Test" class="p-button-success"></button>
+<p-table [value]="categories" styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+      <tr>
+          <th jhiTranslate="category.table.name">Nome</th>
+          <th jhiTranslate="category.table.creationDate">Data de Criação</th>
+          <th jhiTranslate="category.table.lastUpdateDate">Data da Última Atualização</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-category>
+      <tr>
+          <td>{{ category.name }}</td>
+          <td>{{ category.creationDate | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+          <td>{{ category.lastUpdateDate | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+      </tr>
+  </ng-template>
+</p-table>
