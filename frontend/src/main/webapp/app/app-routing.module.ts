@@ -45,6 +45,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
           path: '',
           loadChildren: () => import(`./entities/entity-routing.module`).then(({ EntityRoutingModule }) => EntityRoutingModule),
         },
+        {
+          path: 'categoria',
+          loadChildren: () => import('./dev-modules/category/category.module').then(m => m.CategoryModule)
+        },
         ...errorRoute,
       ],
       { enableTracing: DEBUG_INFO_ENABLED, bindToComponentInputs: true }
